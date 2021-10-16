@@ -1,0 +1,217 @@
+﻿@model HooghlyPay.API.Models.ViewModels.LoginViewModel
+@using System.Globalization
+@using Microsoft.AspNetCore.Http.Features
+@using Newtonsoft.Json;
+@using Microsoft.AspNetCore.Http;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    Layout = null;
+
+}
+<script type="text/javascript"> 
+
+      function CheckOutPay() {
+        if (f_ValidateGetPayTransDetails()) {
+            $(".inpclear").removeClass("error-form");
+            $("#divPageload").show();
+           
+        $.ajax({ 
+            url: '@Url.Action("ValidatePayment","Pay")',
+            type: 'POST',
+            cache: false,
+            data: $("#frmexploredemo").serialize(),
+            success: function (result) {
+                if (result != "") {
+                    var textval = result.split('✌');
+                    var susmsg = textval[1];
+
+                    if (susmsg == 0) {
+                        window.open(textval[0], '_self');
+                    }
+                    else {
+                        // toastrerror(result, '');
+                        alert(result);
+                    }
+                }
+                else
+                    alert("Something went wrong !");
+                    //toastrerror("Something went wrong !", '');
+                $("#divPageload").hide();
+            },
+           error: function (jqXHR, exception) {
+               console.log("jqXHR EX", jqXHR);
+               console.log("exception EX", exception);
+              
+                // Your error handling logic here..
+            }
+        });
+            }
+    }
+     f_ValidateGetPayTransDetails = function ValidateGetPayTransDetails() {
+         var valid = true;
+
+         if ($("#txtfullname").val() == "") {
+             $("#txtfullname").css("border", "1px solid red");
+             valid = false;
+         }
+         else {
+             $("#txtfullname").css("border", "");
+         }
+
+         if ($("#txtaddress").val() == "") {
+             $("#txtaddress").css("border", "1px solid red");
+             valid = false;
+         }
+         else {
+             $("#txtaddress").css("border", "");
+         }
+         if ($("#txtpincode").val() == "") {
+             $("#txtpincode").css("border", "1px solid red");
+             valid = false;
+         }
+         else {
+             $("#txtpincode").css("border", "");
+         }
+         if ($("#txtemail").val() == "") {
+             $("#txtemail").css("border", "1px solid red");
+             valid = false;
+         }
+         else {
+             $("#txtemail").css("border", "");
+         }
+         if ($("#txtmobile").val() == "") {
+             $("#txtmobile").css("border", "1px solid red");
+             valid = false;
+         }
+         else {
+             $("#txtmobile").css("border", "");
+         }
+         if ($("#txtpannumber").val() == "") {
+             $("#txtpannumber").css("border", "1px solid red");
+             valid = false;
+         }
+         else {
+             $("#txtpannumber").css("border", "");
+         }
+         if ($("#txtpayoutPurpose").val() == "") {
+             $("#txtpayoutPurpose").css("border", "1px solid red");
+             valid = false;
+         }
+         else {
+             $("#txtpayoutPurpose").css("border", "");
+         }
+
+         return valid;
+    }
+</script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Hooghly Pay">
+    <meta name="author" content="Hooghly Pay">
+    <meta name="keywords" content="Hooghly Pay">
+
+    <!-- Title Page-->
+    <title>Hooghly Pay</title>
+
+    <!-- Icons font CSS-->
+    <link href="~/vendor/mdi-font/css/material-design-iconic-font.css" rel="stylesheet" />
+    <link href="~/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="~/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="~/css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div id="divPageload" class="preloader" style="display:none"></div>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <div style=" background: black; text-align: center;">
+
+                        <img style="padding: 10px; width:50%;" src="https://www.hooghlypay.com/portal/assets/images/HooglyPayLogowhite.png" alt="">
+                    </div>
+                    <h2 class="title" style="text-align:center">To Donate Online please fill the form below:</h2>
+
+                    @using (Html.BeginForm("ValidatePayment", "Pay", FormMethod.Post, new { name = "frmexploredemo", id = "frmexploredemo", @style = "width:100%;" }))
+                    {
+                        <div class="input-group">
+                            <label class="label">Full Name </label>
+                            @Html.TextBoxFor(model => model.ValidatePaymentRequest.billingDetails.fName, new { @class = "input--style-4", @id = "txtfullname" })
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Full Postal Address</label>
+                            @Html.TextBoxFor(model => model.ValidatePaymentRequest.billingDetails.address1, new { @class = "input--style-4", @id = "txtaddress" })
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Pin Code </label>
+                            @Html.TextBoxFor(model => model.ValidatePaymentRequest.billingDetails.pincode, new { @class = "input--style-4", @id = "txtpincode" })
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Email ID</label>
+                            @Html.TextBoxFor(model => model.ValidatePaymentRequest.billingDetails.email, new { @class = "input--style-4", @id = "txtemail" })
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Telephone/Mobile No.</label>
+                            @Html.TextBoxFor(model => model.ValidatePaymentRequest.billingDetails.mobile, new { @class = "input--style-4", @id = "txtmobile" })
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Donor PAN</label>
+                            @Html.TextBoxFor(model => model.VendorDetails.payoutIFSCcode, new { @class = "input--style-4", @id = "txtpannumber" })
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Donation Details</label>
+                            @Html.TextBoxFor(model => model.VendorDetails.payoutPurpose, new { @class = "input--style-4", @id = "txtpayoutPurpose" })
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Amount of Donation (Rs. Ps.)</label>
+                            @Html.TextBoxFor(model => model.VendorDetails.payoutAmount, new { @class = "input--style-4", @id = "txtpayoutAmount", @placeholder = "100" })
+                        </div>
+
+                        <div class="input-group">
+                            <div class="p-t-10">
+                                <label class="radio-container m-r-45">
+                                    <div class="col"> <span class="">By Donation you have to agree<a href="~/Home/TermsandConditions" target="_blank"> terms & conditions</a>.</span></div>
+                                    <input type="checkbox" name="gender">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="p-t-15">
+
+                            <button type="button" class="btn btn--radius-2 btn--blue" onclick="return CheckOutPay();">Pay Now</button>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+
+    <script src="~/vendor/jquery/vendors.min.js"></script>
+    
+    <!-- Vendor JS-->
+    <script src="~/vendor/select2/select2.min.js"></script>
+    <script src="~/vendor/datepicker/moment.min.js"></script>
+    <script src="~/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="~/js/global.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->

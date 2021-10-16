@@ -1,0 +1,123 @@
+* {
+  outline: none;
+}
+
+.form-heading {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 10px;
+}
+.error-form {
+	border-color: #ff000061 !important;
+}
+.reg-form {
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 15px auto;
+  padding: 15px;
+  width: 800px;
+}
+
+
+.field-row {
+  position: relative;
+  width: 100%;
+}
+
+.form-label {
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 15px 0px 0;
+  text-align: right;
+  width: 150px;
+}
+
+.field {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 400px;
+}
+.field.field-short {
+  width: 70px;
+}
+
+.message {
+  display: inline-block;
+}
+
+.form-button {
+  background: linear-gradient(180deg, #808080, #2a2a2a);
+  border: none;
+  border-radius: 0;
+  color: white;
+  display: inline-block;
+  padding: 20px;
+  font-size: 16px;
+}
+
+:required + .message::before {
+  content: "* ";
+}
+
+.text-field:focus:required:valid {
+  outline: green solid 2px;
+}
+.text-field:focus:required:invalid {
+  outline: orange solid 2px;
+}
+
+.date-field {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.date-field:focus:in-range {
+  outline: green solid 2px;
+}
+.date-field:focus:out-of-range {
+  outline: orange solid 2px;
+}
+
+.website-field:focus:valid {
+  outline: green solid 2px;
+}
+.website-field:focus:invalid {
+  outline: orange solid 2px;
+}
+
+
+}
+
+.dob-field:focus:out-of-range + .message::after {
+  color: orange;
+  content: "Date is out of range";
+}
+
+.tel-field:focus:invalid + .message::after {
+  color: orange;
+  content: "Required Mobile number";
+}
+
+.email-field:focus:invalid + .message::after {
+  color: orange;
+  content: "Required email address";
+}
+
+}
+
+
+.website-field:focus:invalid + .message::after {
+  color: orange;
+  content: "Required valid URL";
+}
+	<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+

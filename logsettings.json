@@ -1,0 +1,49 @@
+{
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.File" ],
+    "LevelSwitches": { "$controlSwitch": "Verbose" },
+    "MinimumLevel": {
+      "Default": "Debug", // Default Setting
+      "Override": {
+        "Microsoft": "Error",
+        "System": "Error",
+        "Microsoft.AspNetCore": "Error",
+        "Microsoft.AspNetCore.Authentication": "Error",
+        "OgMoneyKW.API.Helpers": "Debug" //Namespace wise Override
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "File",
+        "Args": {
+          "path": "TraceLog/Hooghly-pay_log-.txt",
+          "rollingInterval": "Day",
+          "retainedFileCountLimit": null,
+          "rollOnFileSizeLimit": true,
+          "fileSizeLimitBytes": 10071520
+        }
+      }
+    ],
+
+    "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId" ],
+    "Properties": {
+      "Application": "Hooghly Pay"
+    },
+    "Destructure": [
+
+      {
+        "Name": "ToMaximumDepth",
+        "Args": { "maximumDestructuringDepth": 10 }
+      },
+      {
+        "Name": "ToMaximumStringLength",
+        "Args": { "maximumStringLength": 10000 }
+      },
+      {
+        "Name": "ToMaximumCollectionCount",
+        "Args": { "maximumCollectionCount": 50 }
+      }
+    ]
+
+  }
+}

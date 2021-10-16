@@ -1,0 +1,211 @@
+﻿.error-form {
+    border-color: #ff000061 !important;
+}
+.div-error {
+    border: 1px solid #ff000061;
+    border-radius: 5px;
+}
+.displaynone {
+    display: none !important;
+}
+
+.displayblock {
+    display: block !important;
+}
+
+.displaywebkitbox {
+    display: -webkit-box !important;
+}
+
+.cursorpointer {
+    cursor: pointer !important;
+}
+
+.switchleft {
+    z-index: 11;
+    position: relative;
+    top: 14px;
+}
+
+.lblerror {
+    color: red !important;
+}
+
+/*Loader*/
+.preloader {
+    align-items: center;
+    background: rgba(23, 22, 22, 0.57);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    transition: opacity 0.3s linear;
+    width: 100%;
+    z-index: 9999;
+    /* background: url('../assets/images/default.svg') center no-repeat rgba(0, 0, 0, 0.22);*/
+    background: url('../assets/images/loading.gif') center no-repeat rgba(0, 0, 0, 0.22);
+    background-size: 150px;
+    /*http: //62.150.54.226/OgPayCMS/     ----   /assets/images/default.svg */
+}
+
+
+.spinner-grow {
+    position: fixed;
+    z-index: 10000;
+    color: #fff;
+    left: 50%;
+    top: 50%;
+    z-index: 10053;
+    /*background: url('https://www.pay-it.mobi/WPSCMS/assets2/layouts/layout/img/loading-spinner-blue.gif') center no-repeat #fff;*/
+    background-color: rgb(76, 82, 185);
+}
+
+.showbox {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5%;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+    z-index: 1055;
+}
+
+    .loader:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+.circular {
+    -webkit-animation: rotate 2s linear infinite;
+    animation: rotate 2s linear infinite;
+    height: 100%;
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+    stroke-linecap: round;
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124;
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124;
+    }
+}
+
+@-webkit-keyframes color {
+    100%, 0% {
+        stroke: #d62d20;
+    }
+
+    40% {
+        stroke: #0057e7;
+    }
+
+    66% {
+        stroke: #008744;
+    }
+
+    80%, 90% {
+        stroke: #ffa700;
+    }
+}
+
+@keyframes color {
+    100%, 0% {
+        stroke: #d62d20;
+    }
+
+    40% {
+        stroke: #0057e7;
+    }
+
+    66% {
+        stroke: #008744;
+    }
+
+    80%, 90% {
+        stroke: #ffa700;
+    }
+}
+
+.tdline {
+    line-height: 1.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.liactive {
+    background: linear-gradient(118deg, #0071BA, rgba(115, 103, 240, 0.7));
+    box-shadow: none;
+    color: #fff;
+    font-weight: 400;
+    border-radius: 4px;
+}

@@ -1,0 +1,136 @@
+﻿@model HooghlyPay.API.Models.ViewModels.LoginViewModel
+@{
+    Layout = null;
+    var Checkerror = TempData["CheckOutError"];
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="HooghlyPay">
+    <meta name="author" content="Hooghly">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>Receipt</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <script type="text/javascript">
+    $(function () {
+        if('@Checkerror' != null && '@Checkerror' != '') {
+            $("#divchkerror").show();
+        }
+    });
+        //function BackToDashboard() {
+           
+        //    window.opener.location.reload();
+        //    window.top.close();
+
+        //}
+    </script>
+</head>
+
+<body class="bg-light">
+
+    <!-- Navigation -->
+    <!-- Page Content -->
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-sm-6 my-1 text-center-sm text-md-left">
+                        <h2 class="text-hooghly-brand-color">Receipt</h2>
+                    </div>
+                    <div class="col-12 col-sm-6 my-1 text-center-sm text-md-right my-auto">
+                        <h4 class="text-hooghly-brand-color"><img src="~/assets/images/HooglyPayLogo.png" width="250" height="75" alt="" /></h4>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong>
+                            Hooghly Technologies and Services Private Limited.
+                        </strong>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box row" style="padding:0.5rem;">
+                            <div class="col-md-6">
+                                <div class="titletop">Date : <label class="titlebottom"> @DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year</label></div>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <div class="titletop">Amount :  <label class="titlebottom">@Model.CheckOutReturnDTO.PaidAmount @Model.CheckOutReturnDTO.Currency</label></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divchkerror" class="col-md-12" style="display:none;">
+                        <div class="box" style="padding:0.6rem;">
+                            <div class="titlebottom text-center" style="color:red !important;">@Checkerror ! Please Contact Our HooghlyPay Team</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs">
+                    <table class="table table-striped sm">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            @if (Model.CheckOutReturnDTO != null)
+                            {
+                            <tr>
+                                <td class="border-top-0">TrackID</td>
+                                <td class="border-top-0">@Model.CheckOutReturnDTO.TrackID</td>
+
+                            </tr>
+                            <tr>
+                                <td class="border-top-0">ReferenceID</td>
+                                <td class="border-top-0">@Model.CheckOutReturnDTO.ReferenceID</td>
+                            </tr>
+                            <tr>
+
+                                <td class="border-top-0">Message</td>
+                                <td class="border-top-0">@Model.CheckOutReturnDTO.ErrorMessage</td>
+                            </tr>
+                            <tr>
+                                <td class="border-top-0">Result</td>
+                                @if (Model.CheckOutReturnDTO.Result == "CAPTURED")
+                                    {
+                                <td class="border-top-0"><span class="text-success">CAPTURED</span></td>
+                                    }
+                                    else
+                                    {
+                                <td class="border-top-0"><span class="text-danger">@Model.CheckOutReturnDTO.Result</span></td>
+                                    }
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-6 text-right">
+                        <a href="https://www.hooghlypay.com/HooghlyPay" style="border-color: #1f284c;" class="btn bg-gradient-success mr-1 mb-1 waves-effect waves-light mt-1 mb-1">Back to Dashboard</a>
+                        @*onclick="return BackToDashboard();"*@
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div style="text-align: center;" class="copy text-secondary">www.hooghlypay.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

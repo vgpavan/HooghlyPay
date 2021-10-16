@@ -1,0 +1,90 @@
+2021-07-22 13:41:10.085 +05:30 [ERR] 
+
+http localhost:1605/ValidatePayment 
+The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.Trace =    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at HooghlyPay.API.ControllerLogic.Implementaion.Crypto.DecryptedString(String encryptedString, String masterKey, String masterIV) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\Crypto.cs:line 54
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ComputeHash(ValidatePaymentRequest _req, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 75
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ValidatePayment(ValidatePaymentRequest obj, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 39
+   at HooghlyPay.API.Controllers.PayController.ValidatePayment(LoginViewModel obj) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\Controllers\PayController.cs:line 91
+
+2021-07-22 13:41:57.107 +05:30 [ERR] 
+
+http localhost:1605/ValidatePayment 
+The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.Trace =    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at HooghlyPay.API.ControllerLogic.Implementaion.Crypto.DecryptedString(String encryptedString, String masterKey, String masterIV) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\Crypto.cs:line 54
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ComputeHash(ValidatePaymentRequest _req, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 75
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ValidatePayment(ValidatePaymentRequest obj, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 39
+   at HooghlyPay.API.Controllers.PayController.ValidatePayment(LoginViewModel obj) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\Controllers\PayController.cs:line 91
+
+2021-07-22 13:43:05.857 +05:30 [ERR] 
+
+http localhost:1605/ValidatePayment 
+The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.Trace =    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at HooghlyPay.API.ControllerLogic.Implementaion.Crypto.DecryptedString(String encryptedString, String masterKey, String masterIV) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\Crypto.cs:line 54
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ComputeHash(ValidatePaymentRequest _req, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 75
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ValidatePayment(ValidatePaymentRequest obj, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 39
+   at HooghlyPay.API.Controllers.PayController.ValidatePayment(LoginViewModel obj) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\Controllers\PayController.cs:line 91
+
+2021-07-22 13:45:30.855 +05:30 [ERR] 
+
+http localhost:1605/ValidatePayment 
+The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.Trace =    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at HooghlyPay.API.ControllerLogic.Implementaion.Crypto.DecryptedString(String encryptedString, String masterKey, String masterIV) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\Crypto.cs:line 54
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ComputeHash(ValidatePaymentRequest _req, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 75
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ValidatePayment(ValidatePaymentRequest obj, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 39
+   at HooghlyPay.API.Controllers.PayController.ValidatePayment(LoginViewModel obj) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\Controllers\PayController.cs:line 91
+
+2021-07-22 13:58:50.791 +05:30 [ERR] 
+
+http localhost:1605/ValidatePayment 
+The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.Trace =    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at HooghlyPay.API.ControllerLogic.Implementaion.Crypto.DecryptedString(String encryptedString, String masterKey, String masterIV) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\Crypto.cs:line 54
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ComputeHash(ValidatePaymentRequest _req, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 75
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ValidatePayment(ValidatePaymentRequest obj, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 39
+   at HooghlyPay.API.Controllers.PayController.ValidatePayment(LoginViewModel obj) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\Controllers\PayController.cs:line 91
+
+2021-07-22 13:59:30.034 +05:30 [ERR] 
+
+http localhost:1605/ValidatePayment 
+The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.Trace =    at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at HooghlyPay.API.ControllerLogic.Implementaion.Crypto.DecryptedString(String encryptedString, String masterKey, String masterIV) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\Crypto.cs:line 54
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ComputeHash(ValidatePaymentRequest _req, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 75
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ValidatePayment(ValidatePaymentRequest obj, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 39
+   at HooghlyPay.API.Controllers.PayController.ValidatePayment(LoginViewModel obj) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\Controllers\PayController.cs:line 91
+
+2021-07-22 14:03:50.087 +05:30 [ERR] 
+
+http localhost:1605/ValidatePayment 
+The input data is not a complete block.Trace =    at Internal.Cryptography.UniversalCryptoDecryptor.UncheckedTransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at Internal.Cryptography.UniversalCryptoTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.ReadAsyncCore(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken, Boolean useAsync)
+   at System.Security.Cryptography.CryptoStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.StreamReader.ReadBuffer()
+   at System.IO.StreamReader.ReadToEnd()
+   at HooghlyPay.API.ControllerLogic.Implementaion.Crypto.DecryptStringFromBytes_Aes(Byte[] cipherText, Byte[] Key, Byte[] IV) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\Crypto.cs:line 91
+   at HooghlyPay.API.ControllerLogic.Implementaion.Crypto.DecryptedString(String encryptedString, String masterKey, String masterIV) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\Crypto.cs:line 54
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ComputeHash(ValidatePaymentRequest _req, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 75
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ValidatePayment(ValidatePaymentRequest obj, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 39
+   at HooghlyPay.API.Controllers.PayController.ValidatePayment(LoginViewModel obj) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\Controllers\PayController.cs:line 91
+
+2021-07-22 14:04:15.523 +05:30 [ERR] 
+
+http localhost:1605/ValidatePayment 
+The input data is not a complete block.Trace =    at Internal.Cryptography.UniversalCryptoDecryptor.UncheckedTransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at Internal.Cryptography.UniversalCryptoTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.ReadAsyncCore(Byte[] buffer, Int32 offset, Int32 count, CancellationToken cancellationToken, Boolean useAsync)
+   at System.Security.Cryptography.CryptoStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.IO.StreamReader.ReadBuffer()
+   at System.IO.StreamReader.ReadToEnd()
+   at HooghlyPay.API.ControllerLogic.Implementaion.Crypto.DecryptStringFromBytes_Aes(Byte[] cipherText, Byte[] Key, Byte[] IV) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\Crypto.cs:line 91
+   at HooghlyPay.API.ControllerLogic.Implementaion.Crypto.DecryptedString(String encryptedString, String masterKey, String masterIV) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\Crypto.cs:line 54
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ComputeHash(ValidatePaymentRequest _req, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 75
+   at HooghlyPay.API.ControllerLogic.Implementaion.PayService.ValidatePayment(ValidatePaymentRequest obj, String OriginalEncSalt) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\ControllerLogic\Implementaion\PayService.cs:line 39
+   at HooghlyPay.API.Controllers.PayController.ValidatePayment(LoginViewModel obj) in D:\Projects\Personal\Hoogly\Hoog\HooghlyPay\HooghlyPay.API\Controllers\PayController.cs:line 91
+
